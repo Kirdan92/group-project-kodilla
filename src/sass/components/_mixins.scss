@@ -1,0 +1,13 @@
+@mixin setComponent($placeholder) {
+  %#{$placeholder} {
+    @content;
+  }
+}
+
+@mixin getComponent($placeholder) {
+  @extend %#{$placeholder};
+}
+
+@include setComponent(transition) {
+  transition: background-color 0.25s, color 0.25s, border-color 0.25s;
+}

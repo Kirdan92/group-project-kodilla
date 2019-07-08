@@ -1,0 +1,179 @@
+.section--products {
+  .panel-bar {
+    .row {
+      justify-content: center;
+      @include breakpoint(xs) {
+        min-height: 75px;
+        margin-bottom: 50px;
+        display: flex;
+        flex-direction: column;
+      }
+      @include breakpoint(sm) {
+        min-height: 47px;
+      }
+      .heading {
+        @include breakpoint(xs) {
+          width: 100%;
+        }
+      }
+      .products-dropdown {
+        @include breakpoint(xs) {
+          min-height: 42px;
+          border-bottom: 4px solid $primary;
+        }
+        @include breakpoint(sm) {
+          border-bottom: 4px solid $primary;
+        }
+      }
+      .nav {
+        display: flex;
+        justify-content: center;
+      }
+      .products--dropdown-content {
+        border-bottom: 0;
+        position: relative;
+        min-height: 41.6px;
+        @include breakpoint(xs) {
+          &::before {
+            content: attr(data-picked);
+            font-size: 18px;
+            font-weight: 600;
+            min-height: 41.6px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+        }
+        @include breakpoint(sm) {
+          &::before {
+            content: attr(data-picked);
+            font-size: 18px;
+            font-weight: 600;
+            min-height: 41.6px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+        }
+        li {
+          display: inline-block;
+          padding: 0;
+          vertical-align: bottom;
+          @include breakpoint(xs) {
+            display: none;
+            margin-right: 0;
+            margin-left: 0;
+          }
+          @include breakpoint(sm) {
+            display: none;
+            margin-right: 0;
+            margin-left: 0;
+          }
+          a {
+            display: inline-block;
+            text-decoration: none;
+            padding: 0.5rem;
+            @include breakpoint(xs) {
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+            }
+            @include breakpoint(sm) {
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+            }
+          }
+        }
+        .products-hamburger {
+          display: none;
+          font-weight: 900;
+          position: absolute;
+          top: 22px;
+          transform: translateY(-50%);
+          right: 0.5em;
+          z-index: 2;
+          font-size: 18px;
+          @include breakpoint(xs) {
+            display: inline-block;
+          }
+          @include breakpoint(sm) {
+            display: inline-block;
+          }
+        }
+      }
+      .show-dropdown {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        z-index: 2;
+        width: 100%;
+        background: #fff;
+        right: 0;
+        transition: 0.5s;
+        @include breakpoint(sm) {
+          top: -41.6px;
+        }
+        li {
+          display: block;
+          margin-left: 0;
+          a {
+            position: relative;
+            &::before {
+              bottom: -3px;
+            }
+          }
+        }
+      }
+      .dots-mobile {
+        @include breakpoint(xs) {
+          display: none;
+        }
+      }
+    }
+  }
+  .tab-content {
+    .tab-pane {
+      display: none;
+      justify-content: center;
+      &.active {
+        display: flex;
+      }
+      .slider-item {
+        width: 100%;
+
+        .slide {
+          max-width: 250px;
+        }
+      }
+      .tns-outer {
+        margin-left: 15px;
+        .tns-nav {
+          display: inline-block;
+          font-weight: 600;
+          button:first-of-type {
+            margin-left: 0;
+          }
+          button {
+            display: inline-block;
+            margin-left: 0.5rem;
+            width: 13px;
+            height: 13px;
+            border: none;
+            border-radius: 6px;
+            background-color: #e1e1e1;
+            @include getComponent(transition);
+            &.tns-nav-active,
+            &:hover {
+              background-color: $primary;
+            }
+          }
+        }
+      }
+    }
+  }
+}

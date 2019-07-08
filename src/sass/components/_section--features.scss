@@ -1,0 +1,28 @@
+.section--features {
+  padding: 5rem 0;
+  .container {
+    .col {
+      @include breakpoint(xs) {
+        min-width: 100%;
+        margin-bottom: 20px;
+      }
+      @include breakpoint(sm) {
+        padding: 0 10px;
+        max-width: 50%;
+        min-width: 45%;
+        margin-bottom: 20px;
+      }
+      @include breakpoint(md) {
+        padding: 0 10px;
+        max-width: 50%;
+        min-width: 45%;
+        margin-bottom: 20px;
+      }
+    }
+    .feature--box-title {
+      @include breakpoint(lg) {
+        font-size: 1.1rem;
+      }
+    }
+  }
+}
